@@ -39,9 +39,13 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
-}
+function showValues(obj) {
+  let result = '';
+  for(let prop in obj){
+      result += obj[prop]
+    }
+    return result;
+  }
 
 
 
@@ -53,7 +57,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj){
+  for(let i in obj){
+    if(obj[i] > 10){
+      obj[i] = 0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -65,7 +76,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj){
+  for(let i in obj){
+     obj[i] *= 2;
+  }
+  return obj;
+}
 
 
 
@@ -79,7 +95,17 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj){
+  let empty = ''
+  for(let i in obj){
+    console.log(i)
+    if(i[0] === 's' && i[1] === 'h'){
+      empty += obj[i];
+    }
+  }
+  return empty;
+}
+
 
 
 
@@ -110,7 +136,10 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(obj) {
+  delete obj.password; 
+  return obj;
+}
 
 
 
@@ -129,7 +158,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for(let prop in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[prop] > 100){
+    delete deleteTheBigNumbers[prop]
+  }
+}
 
 
 
@@ -142,7 +175,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj){
+  for(let i in obj){
+    if(i[0] === 'k'){
+      delete obj[i]
+    }
+  }
+  return obj;
+}
 
 
 
@@ -157,6 +197,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure(obj){
+  for(let sent in obj){
+    if(!obj[sent].includes('treasure')){
+      delete obj[sent];
+    }
+  }
+  return obj;
+}
 
 
